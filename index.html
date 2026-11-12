@@ -1,0 +1,370 @@
+<!doctype html>
+<html
+  class="research-page"
+  lang="en"
+  data-theme="light"
+  data-project="disinfection-robot"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="We investigate how human activity understanding, environmental perception, spatial reasoning, and robot motion can support adaptive disinfection in complex indoor environments."
+    />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content="Astro v6.3.5" />
+    <link rel="icon" type="image/x-icon" href="_shared/favicons/disinfection-robot.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="_shared/favicons/disinfection-robot-32.png" />
+    <link
+      rel="canonical"
+      href="./"
+    />
+    <meta property="og:title" content="From Perception to Action: Adaptive Robotic Disinfection" />
+    <meta
+      property="og:description"
+      content="We investigate how human activity understanding, environmental perception, spatial reasoning, and robot motion can support adaptive disinfection in complex indoor environments."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="./"
+    />
+    <meta
+      property="og:image"
+      content="./media/disinfection_pipeline.png"
+    />
+    <style>
+      @font-face{font-family:"Noto Sans-e26573b19e8d949d";src:url("./_astro/fonts/1d7aab50fda97bb3.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:100 900;font-style:italic;}@font-face{font-family:"Noto Sans-e26573b19e8d949d";src:url("./_astro/fonts/1e5097bbf9c9d577.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:100 900;font-style:normal;}@font-face{font-family:"Noto Sans-e26573b19e8d949d fallback: Arial";src:local("Arial");font-display:swap;font-weight:100 900;font-style:italic;size-adjust:100.269%;ascent-override:106.6132%;descent-override:29.2214%;line-gap-override:0%;}@font-face{font-family:"Noto Sans-e26573b19e8d949d fallback: Arial";src:local("Arial");font-display:swap;font-weight:100 900;font-style:normal;size-adjust:100.269%;ascent-override:106.6132%;descent-override:29.2214%;line-gap-override:0%;}:root{--font-noto-sans:"Noto Sans-e26573b19e8d949d","Noto Sans-e26573b19e8d949d fallback: Arial",sans-serif;}
+    </style>
+    <link
+      rel="preload"
+      href="./_astro/fonts/1e5097bbf9c9d577.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <title>From Perception to Action: Adaptive Robotic Disinfection</title>
+    <link rel="stylesheet" href="./_astro/index.2qnWyEqu.css" />
+    <link rel="stylesheet" href="research-layout.css?v=d75cf19b9a81" />
+    <link rel="stylesheet" href="research-content.css?v=7ed1f7731799" />
+    <link rel="stylesheet" href="research-editorial-layout.css?v=20261111-editorial" />
+    <style>
+      /* Page-local presentation; shared editorial rules own body typography,
+         content width, section rhythm, grids, and responsive gutters. */
+      html[data-project="disinfection-robot"],
+      html[data-project="disinfection-robot"] body { background: #fff; color-scheme: light; }
+      html[data-project="disinfection-robot"] { scroll-behavior: smooth; scroll-padding-top: 24px; }
+      [data-project="disinfection-robot"] .disinfection-hero {
+        --hero-gutter: clamp(24px, 4vw, 72px);
+        position: relative; isolation: isolate; display: flex; flex-direction: column;
+        min-height: 100vh; min-height: 100svh; height: auto;
+        margin: 0; overflow: hidden; color: #fff;
+        background: #242b29 url("./projects/disinfection-robot/robot-simulation-poster.jpg") center / cover no-repeat;
+      }
+      .disinfection-hero::after {
+        content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none;
+        background: radial-gradient(ellipse max(960px, 74vw) max(680px, 80svh) at left top,
+          #060e14f0, #060e14c7 45%, transparent 100%),
+          linear-gradient(#060e1499, transparent 120px);
+      }
+      [data-project="disinfection-robot"] .disinfection-hero-video {
+        position: absolute; z-index: 0; inset: 0; display: block;
+        width: 100%; height: 100%; max-width: none; max-height: none;
+        margin: 0; border-radius: 0; object-fit: cover; object-position: center;
+      }
+      .disinfection-nav {
+        position: relative; z-index: 3; display: flex;
+        justify-content: space-between; align-items: center; gap: 24px;
+        padding: 24px var(--hero-gutter); font-size: 13px; line-height: 1.5;
+      }
+      .disinfection-nav > a { font-weight: 500; }
+      .disinfection-nav > a span { margin-inline: 10px; opacity: .65; }
+      .disinfection-nav > div { display: flex; gap: 28px; }
+      [data-project="disinfection-robot"] .disinfection-nav a { color: #fff; text-decoration: none; }
+      [data-project="disinfection-robot"] .disinfection-nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+      .disinfection-hero-copy {
+        position: relative; z-index: 2;
+        width: min(760px, calc(100% - 2 * var(--hero-gutter)));
+        margin-inline: var(--hero-gutter);
+        padding-top: clamp(28px, 4svh, 48px);
+        padding-bottom: clamp(160px, 24svh, 260px);
+        font-family: "IBM Plex Sans Variable", sans-serif; text-align: left;
+      }
+      [data-project="disinfection-robot"] .disinfection-hero h1 {
+        margin: 0; color: #F5F7F6; font-size: clamp(32px, calc(24px + 2vw), 56px); font-weight: 600;
+        line-height: 1.1; letter-spacing: -.025em; text-wrap: wrap; text-shadow: none;
+      }
+      .disinfection-hero h1 span { display: block; }
+      [data-project="disinfection-robot"] .disinfection-hero h2 {
+        max-width: 600px; margin: 20px 0 0; color: #D5E1E5;
+        font-size: clamp(18px, calc(16px + .35vw), 22px); font-weight: 500; line-height: 1.4; letter-spacing: normal; text-wrap: balance;
+      }
+      [data-project="disinfection-robot"] .disinfection-hero-copy > p {
+        max-width: 60ch; margin: 14px 0 0; color: #C4CFD3;
+        font-size: clamp(15px, calc(14px + .2vw), 17px); font-weight: 400; line-height: 1.6;
+      }
+      .disinfection-simulation-label {
+        position: absolute; z-index: 3; right: var(--hero-gutter); bottom: 20px;
+        display: flex; align-items: center; gap: 10px; font-size: 10px; line-height: 1;
+      }
+      .disinfection-simulation-label button {
+        display: grid; place-items: center; width: 44px; height: 44px; padding: 0;
+        border: 1px solid rgb(255 255 255 / 55%); border-radius: 50%;
+        color: #fff; background: rgb(0 0 0 / 15%); font: inherit; font-size: 14px; cursor: pointer;
+      }
+      .disinfection-skip { position: fixed; z-index: 100; top: 16px; left: 16px;
+        padding: 10px 16px; background: #fff; clip-path: inset(50%); width: 1px; height: 1px; overflow: hidden; white-space: nowrap; }
+      .disinfection-skip:focus { clip-path: none; width: auto; height: auto; }
+      [data-project="disinfection-robot"] :is(a, button):focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+      [data-project="disinfection-robot"] .disinfection-hero :is(a, button):focus-visible { outline-color: #fff; }
+      [data-project="disinfection-robot"] .disinfection-problem-grid { gap: clamp(28px, 5vw, 72px); }
+      [data-project="disinfection-robot"] .disinfection-problem-grid > .rp-result-group { margin: 0; }
+      [data-project="disinfection-robot"] .disinfection-problem-grid h4 {
+        margin: 16px 0 0; font-size: clamp(24px, 2.3vw, 32px); font-weight: 600;
+        line-height: 1.25; letter-spacing: -.025em; color: var(--rp-text);
+      }
+      [data-project="disinfection-robot"] .disinfection-capabilities { row-gap: 32px; column-gap: clamp(28px, 5vw, 72px); }
+      [data-project="disinfection-robot"] .disinfection-capabilities .rp-feature { padding: 0; border: 0; }
+      [data-project="disinfection-robot"] .disinfection-capabilities .rp-feature-number {
+        font-size: 28px; line-height: 1.2; font-weight: 600; letter-spacing: -.025em;
+        text-transform: none; color: var(--rp-text);
+      }
+      [data-project="disinfection-robot"] .disinfection-capabilities .rp-feature-title { margin-top: 8px; }
+      [data-project="disinfection-robot"] .disinfection-capabilities .rp-feature-description { margin-top: 8px; }
+      [data-project="disinfection-robot"] .disinfection-pipeline { margin: 36px 0 0; }
+      .disinfection-figure-link { display: block; cursor: zoom-in; }
+      [data-project="disinfection-robot"] .disinfection-pipeline img { width: 100%; height: auto; margin: 0; border-radius: 0; }
+      .disinfection-resolution-link { display: inline-block; margin-top: 8px; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
+      /* Copied from Subsurface's compact bibliography, scoped to this page. */
+html[data-project="disinfection-robot"] #publication .rp-section-heading {
+  margin-bottom: 16px;
+}
+html[data-project="disinfection-robot"] #publication .rp-section-heading h2 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -.02em;
+}
+html[data-project="disinfection-robot"] #publication .ss-publication-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html[data-project="disinfection-robot"] #publication .ss-publication-list > li {
+  padding-block: 8px;
+  border-top: 1px solid var(--rp-divider);
+}
+html[data-project="disinfection-robot"] #publication > .ss-publication-list > li:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+html[data-project="disinfection-robot"] #publication .ss-publication-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-wrap: wrap;
+}
+html[data-project="disinfection-robot"] #publication .ss-publication-title a {
+  color: var(--rp-text);
+}
+html[data-project="disinfection-robot"] #publication .ss-publication-title a:is(:hover, :focus-visible) {
+  color: #087E93;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+html[data-project="disinfection-robot"] #publication .rp-result-group > p {
+  margin-top: 4px;
+  color: var(--rp-muted);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+html[data-project="disinfection-robot"] #publication .rp-result-group > .ss-publication-year {
+  margin: 0 0 3px;
+  font-size: 12.5px;
+}
+html[data-project="disinfection-robot"] #publication .ss-publication-list cite {
+  font-size: 12.5px;
+  font-style: normal;
+}
+
+      @media (max-width: 767px) {
+        .disinfection-nav { padding-block: 22px; align-items: flex-start; gap: 16px; }
+        .disinfection-nav > div { flex-direction: column; align-items: flex-end; gap: 8px; }
+        .disinfection-nav > div a:last-child { display: none; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html[data-project="disinfection-robot"] { scroll-behavior: auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="rp-editorial">
+      <a href="#problem" class="disinfection-skip">Skip to research</a>
+      <header class="disinfection-hero full-bleed" id="top" aria-labelledby="disinfection-title">
+        <video class="disinfection-hero-video" id="robot-simulation"
+          autoplay muted loop playsinline preload="none"
+          poster="./projects/disinfection-robot/robot-simulation-poster.jpg"
+          width="1268" height="712" aria-hidden="true">
+          <source data-src="./projects/disinfection-robot/robot-simulation.mp4" type="video/mp4" />
+        </video>
+        <nav class="disinfection-nav" aria-label="Project navigation">
+          <a href="https://wangmmstar.github.io/">Mengjun Wang <span aria-hidden="true">/</span> Research</a>
+          <div>
+            <a href="#problem">Explore the research <span aria-hidden="true">↓</span></a>
+            <a href="#approach">Research approach</a>
+          </div>
+        </nav>
+        <div class="disinfection-hero-copy">
+          <h1 id="disinfection-title"><span>From Perception to Action:</span> Adaptive Robotic Disinfection</h1>
+          <h2>Understanding When, What, Where, and How Robots Should Act</h2>
+          <p>We investigate how human activity understanding, environmental perception, spatial reasoning, and robot motion can support adaptive disinfection in complex indoor environments.</p>
+        </div>
+        <div class="disinfection-simulation-label">
+          <button type="button" data-hero-toggle aria-controls="robot-simulation" aria-label="Pause background video" hidden><span aria-hidden="true">Ⅱ</span></button>
+          <span>Simulation</span>
+        </div>
+      </header>
+      <script type="module">
+        const hero = document.querySelector(".disinfection-hero");
+        const video = hero.querySelector("video");
+        const toggle = hero.querySelector("[data-hero-toggle]");
+        const motion = matchMedia("(prefers-reduced-motion: reduce)");
+        let userPaused = false;
+        let inView = true;
+        const syncToggle = () => {
+          toggle.setAttribute("aria-label", video.paused ? "Play background video" : "Pause background video");
+          toggle.firstElementChild.textContent = video.paused ? "▷" : "Ⅱ";
+        };
+        const syncPlayback = () => {
+          toggle.hidden = motion.matches;
+          if (motion.matches || userPaused || !inView || document.hidden) {
+            video.pause();
+            if (motion.matches) video.removeAttribute("autoplay");
+            return;
+          }
+          const source = video.querySelector("source");
+          if (!source.hasAttribute("src")) {
+            source.src = source.dataset.src;
+            video.load();
+          }
+          video.play().catch(syncToggle);
+        };
+        toggle.addEventListener("click", () => {
+          userPaused = !video.paused;
+          syncPlayback();
+        });
+        video.addEventListener("play", syncToggle);
+        video.addEventListener("pause", syncToggle);
+        motion.addEventListener("change", syncPlayback);
+        document.addEventListener("visibilitychange", syncPlayback);
+        new IntersectionObserver(([entry]) => {
+          inView = entry.isIntersecting;
+          syncPlayback();
+        }).observe(hero);
+        syncPlayback();
+      </script>
+      <section class="research-section rp-section" id="problem" aria-labelledby="problem-title" tabindex="-1">
+        <div class="rp-section-heading">
+          <h2 id="problem-title">01 — Problem &amp; Rationale</h2>
+        </div>
+        <div class="rp-feature-layout">
+          <div class="rp-feature-grid rp-feature-grid--2 disinfection-problem-grid">
+            <div class="rp-result-group">
+              <h3>The Problem</h3>
+              <h4>Fixed Robotic Routines Cannot Account for Dynamic Environments.</h4>
+              <p>Indoor environments vary in human activities, objects, surface materials, and spatial configurations. Effective robotic disinfection requires more than executing predefined motions.</p>
+            </div>
+            <div class="rp-result-group">
+              <h3>Our Rationale</h3>
+              <h4>Robots Must Understand Their Environment Before Acting.</h4>
+              <p>We investigate how integrating social and physical perception with robotic motion can inform when, what, where, and how robots perform disinfection tasks.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="research-section rp-section" id="approach" aria-labelledby="approach-title">
+        <div class="rp-section-heading">
+          <p class="rp-eyebrow">02 — Research Approach</p>
+          <h2 id="approach-title">From Environmental Understanding to Robotic Action</h2>
+          <p>Our research examines four complementary capabilities:</p>
+        </div>
+        <div class="rp-feature-layout">
+          <div class="rp-feature-grid rp-feature-grid--2 disinfection-capabilities">
+            <div class="rp-feature">
+              <span class="rp-feature-number">When</span>
+              <h3 class="rp-feature-title">Human Activities</h3>
+              <p class="rp-feature-description">Recognize activities to inform task timing.</p>
+            </div>
+            <div class="rp-feature">
+              <span class="rp-feature-number">What</span>
+              <h3 class="rp-feature-title">Objects &amp; Materials</h3>
+              <p class="rp-feature-description">Identify potential disinfection targets and surface properties.</p>
+            </div>
+            <div class="rp-feature">
+              <span class="rp-feature-number">Where</span>
+              <h3 class="rp-feature-title">Spatial Affordances</h3>
+              <p class="rp-feature-description">Understand spatial configurations and accessibility.</p>
+            </div>
+            <div class="rp-feature">
+              <span class="rp-feature-number">How</span>
+              <h3 class="rp-feature-title">Robotic Motion</h3>
+              <p class="rp-feature-description">Learn motions for interacting with different surfaces.</p>
+            </div>
+          </div>
+        </div>
+        <figure class="disinfection-pipeline">
+          <a class="disinfection-figure-link" href="./media/disinfection_pipeline.png" target="_blank" rel="noopener" aria-label="Enlarge the complete research pipeline figure (opens in a new tab)">
+            <img src="./media/disinfection_pipeline.png" width="4414" height="2173" loading="lazy" decoding="async"
+              alt="Composite research pipeline connecting human activity understanding (When), object detection and material recognition (What), spatial affordances (Where), and learning-based robotic motion (How), around a mobile disinfection robot." />
+          </a>
+          <a class="disinfection-resolution-link" href="./media/disinfection_pipeline.png" target="_blank" rel="noopener">View full-resolution figure ↗</a>
+        </figure>
+      </section>
+      <section class="research-section rp-section" id="vision" aria-labelledby="vision-title">
+        <div class="rp-section-heading">
+          <p class="rp-eyebrow">03 — Research Vision</p>
+          <h2 id="vision-title">Toward Adaptive, Environment-Aware Robotic Systems</h2>
+          <p>Our goal is to connect environmental understanding with task planning and physical action, enabling robots to adapt disinfection operations to changing indoor conditions.</p>
+        </div>
+      </section>
+      <section class="research-section rp-section" id="publication" aria-labelledby="publications-title">
+        <div class="rp-section-heading">
+          <h2 id="publications-title">Selected Publications</h2>
+        </div>
+        <!-- Bibliography markup follows projects/subsurface/index.html. -->
+        <ol class="ss-publication-list" role="list">
+          <li>
+            <article class="rp-result-group">
+              <p class="ss-publication-year"><time datetime="2025">2025</time></p>
+              <h3 class="ss-publication-title"><a href="https://link.springer.com/article/10.1007/s42524-024-4074-y">Multi-classifier information fusion for human activity recognition in healthcare facilities</a></h3>
+              <p>Da Hu, Mengjun Wang, Shuai Li.<br /><cite>Frontiers of Engineering Management, 12(1), 99–116.</cite></p>
+            </article>
+          </li>
+          <li>
+            <article class="rp-result-group">
+              <p class="ss-publication-year"><time datetime="2023">2023</time></p>
+              <h3 class="ss-publication-title"><a href="https://www.sciencedirect.com/science/article/pii/S0952197623004074">Object detection in hospital facilities: A comprehensive dataset and performance evaluation</a></h3>
+              <p>Da Hu, Shuai Li, Mengjun Wang.<br /><cite>Engineering Applications of Artificial Intelligence, 123, Part A, 106223.</cite></p>
+            </article>
+          </li>
+          <li>
+            <article class="rp-result-group">
+              <p class="ss-publication-year"><time datetime="2022">2022</time></p>
+              <h3 class="ss-publication-title"><a href="https://doi.org/10.1111/mice.12811">Recognizing object surface materials to adapt robotic disinfection in infrastructure facilities</a></h3>
+              <p>Da Hu, Shuai Li.<br /><cite>Computer-Aided Civil and Infrastructure Engineering, 37(12), 1521–1546.</cite></p>
+            </article>
+          </li>
+          <li>
+            <article class="rp-result-group">
+              <p class="ss-publication-year"><time datetime="2020">2020</time></p>
+              <h3 class="ss-publication-title"><a href="https://www.sciencedirect.com/science/article/pii/S0360132320305977">Segmenting areas of potential contamination for adaptive robotic disinfection in built environments</a></h3>
+              <p>Da Hu, Hai Zhong, Shuai Li, Jindong Tan, Qiang He.<br /><cite>Building and Environment, 184, 107226.</cite></p>
+            </article>
+          </li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>
